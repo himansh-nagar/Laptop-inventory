@@ -36,7 +36,7 @@ exports.getDetails =(req, res) => {
                                 data2
                             }
                             // res.json(result)
-                            console.log(result["data2"]);
+                            console.log(result);
                             res.render('laptop_detail', {
                                 result
                             })

@@ -4,16 +4,14 @@
   "password": "Mysql",
   "database": "ng-inventory",
   "host": "localhost",
-  "dialect": "mysql",
-  "operatorsAliases": false
+  "dialect": "mysql"
 },
 "test": {
   "username": "root",
   "password": null,
   "database": "database_test",
   "host": "localhost",
-  "dialect": "mysql",
-  "operatorsAliases": false
+  "dialect": "mysql"
 },
   "production": {
     "username": "b7e2437887xxxa",

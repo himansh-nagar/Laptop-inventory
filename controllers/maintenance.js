@@ -7,7 +7,7 @@ exports.maintenance= (req, res) => {
       .create(
         {
           'laptop_id': reqdata.laptop_id,
-          'date': Date.now(),
+          'date': Date(),
           'owner': reqdata.owner,
           'status': reqdata.status,
           'description': reqdata.description

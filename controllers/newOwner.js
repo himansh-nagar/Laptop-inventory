@@ -1,18 +1,18 @@
 const db = require('../models');
 
 exports.newOwner = (req, res) => {
+    console.log(req.body.laptop_id)
     db.owners
         .create({
-            laptop_id: req.body.id,
-            owner_name: req.body.owner_name,
-            date: Date.now()
+            'laptop_id': req.body.laptop_id,
+            'owner_name': req.body.owner_name,
+            'date': Date()
         }, {
             raw: true
         })
         .then(data => {
             console.log("new owner posted");
-            
-            
+            res.json(data);
         })
         .catch(err => console.error(err));
 
@@ -27,8 +27,9 @@ exports.newOwner = (req, res) => {
             }
         })
         .then(data1 => {
-            console.log("new owner updated");
+            console.log("data1  ");
             res.redirect('/getAdmin')
+            
         })
         .catch(err => console.error(err));
 };
