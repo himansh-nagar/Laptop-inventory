@@ -1,0 +1,488 @@
+<%- include('includes/head.ejs') %>
+
+<link rel="stylesheet" href="/static/admin.css">
+</head>
+
+<body>
+    <%- include('includes/nav.ejs') %>
+
+  <section class="main-section">
+    <form method="POST" action="/laptop_details" enctype="multipart/form-data">
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Add New Laptop Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-laptop prefix grey-text"></i>
+                    <input name="name" type="text" id="form34" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form34">Laptop Model</label>
+                </div>
+                
+                <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input name="owner" type="text" id="form29" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form29">Owner</label>
+                </div>
+                
+                <div class="button_outer">
+                    <div class="btn_upload">
+                        <input name="image" type="file" id="upload_file" name="">
+                        Upload Image
+                    </div>
+                </div>s
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-palette prefix grey-text"></i>
+                    <input name="color" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Color</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-desktop prefix grey-text"></i>
+                    <input name="mac" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Mac Address</label>
+                </div>
+                <div class="md-form mb-5">
+                    <i class="fas fa-desktop prefix grey-text"></i>
+                    <input name="ip" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">IP Address</label>
+                </div> <div class="md-form mb-5">
+                    <i class="fas fa-bullseye prefix grey-text"></i>
+                    <input name="active" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Active Status</label>
+                </div> <div class="md-form mb-5">
+                    <i class="fas fa-battery-full prefix grey-text"></i>
+                    <input name="battery" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Battery </label>
+                </div> <div class="md-form mb-5">
+                    <i class="fas fa-align-justify prefix grey-text"></i>
+                    <input name="description" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Description</label>
+                </div> <div class="md-form mb-5">
+                    <i class="fas fa-memory prefix grey-text"></i>
+                    <input name="ram" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Ram</label>
+                </div> <div class="md-form mb-5">
+                    <i class="fas fa-hdd prefix grey-text"></i>
+                    <input name="rom" type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Storage</label>
+                </div> 
+            </div>
+        </form>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center ">
+    <a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#modalContactForm">
+        Add  New Laptop Details
+    </a>
+</div>
+<!-- Owners -->
+<form method="POST" action="/newOwner">
+    <div class="modal fade" id="ownerform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Add New Owner</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+            
+            <div class="md-form mb-5">
+                <i class="fas fa-desktop prefix grey-text"></i>
+                <input name="laptop_id" type="text" id="form29" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form29">Laptop ID</label>
+            </div>
+            
+            <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input name="owner_name" type="text" id="form32" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form32">Owner</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#ownerform">
+    Add New Owner 
+</a>
+</div>
+
+<!-- New Admins -->
+
+<form method="POST" action="/newAdmin">
+    <div class="modal fade" id="adminform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Add New Admin</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input name="email" type="email" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Email</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#adminform">
+    Add New Admin 
+</a>
+</div>
+
+<!-- Delete admin -->
+
+
+<form method="POST" action="/removeAdmin">
+    <div class="modal fade" id="removeadminform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Remove Admin</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input name="email" type="email" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Email</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#removeadminform">
+    Remove Admin 
+</a>
+</div>
+
+<!-- Maintence Details -->
+
+
+<form method="POST" action="/postMaintenance">
+    <div class="modal fade" id="postMaintenance" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Maintenance Details</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="laptop_id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Laptop ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input name="owner" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Owner</label>
+            </div>
+            <div class="md-form mb-5">
+                <i class="fas fa-bullseye prefix grey-text"></i>
+                <input name="status" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">status</label>
+            </div>
+            <div class="md-form mb-5">
+                <i class="fas fa-align-justify prefix grey-text"></i>
+                <input name="description" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Description</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#postMaintenance">
+    Add Maintenance Details 
+</a>
+</div>
+
+<!--  Active status -->
+
+<form method="POST" action="/updateActiveStatus">
+    <div class="modal fade" id="updateActiveStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Active status</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-bullseye prefix grey-text"></i>
+                <input name="active" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Active status</label>
+            </div>
+
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#updateActiveStatus">
+    Active status 
+</a>
+</div>
+
+
+<!-- Battery status -->
+
+
+<form method="POST" action="/updateBatteryStatus">
+    <div class="modal fade" id="updateBatteryStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Battery status</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-battery-full prefix grey-text"></i>
+                <input name="battery" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Battery status</label>
+            </div>
+
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#updateBatteryStatus">
+    Battery status 
+</a>
+</div>
+
+
+<!-- Description -->
+
+<form method="POST" action="/updateDescription">
+    <div class="modal fade" id="updateDescription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Description</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-align-justify prefix grey-text"></i>
+                <input name="description" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">description</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#updateDescription">
+   Update description 
+</a>
+</div>
+
+<!-- newMac -->
+
+
+<form method="POST" action="/newMac">
+    <div class="modal fade" id="newMac" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Mac Address</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-desktop prefix grey-text"></i>
+                <input name="mac" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">Mac</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#newMac">
+   Update Mac Address 
+</a>
+</div>
+
+<!-- newIP -->
+
+
+<form method="POST" action="/newIP">
+    <div class="modal fade" id="newIP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">IP Address</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                <i class="fas fa-laptop prefix grey-text"></i>
+                <input name="id" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">ID</label>
+            </div>
+
+            <div class="md-form mb-5">
+                <i class="fas fa-desktop prefix grey-text"></i>
+                <input name="ip" type="text" id="form34" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form34">IP Address</label>
+            </div>
+        </div>
+    </form>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn BTN">Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center">
+<a href="" class="btn  btn-rounded mb-4 BTN wide" data-toggle="modal" data-target="#newIP">
+   Update IP Address 
+</a>
+</div>
+
+</section>
+<%- include('includes/footer.ejs') %>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    var btnUpload = $("#upload_file"),
+		btnOuter = $(".button_outer");
+	btnUpload.on("change", function(e){
+		var ext = btnUpload.val().split('.').pop().toLowerCase();
+		if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+			$(".error_msg").text("Not an Image...");
+		} else {
+			$(".error_msg").text("");
+			btnOuter.addClass("file_uploading");
+			setTimeout(function(){
+				btnOuter.addClass("file_uploaded");
+			},3000);
+			var uploadedFile = URL.createObjectURL(e.target.files[0]);
+			setTimeout(function(){
+				$("#uploaded_view").append('<img src="'+uploadedFile+'" />').addClass("show");
+			},3500);
+		}
+	});
+	$(".file_remove").on("click", function(e){
+		$("#uploaded_view").removeClass("show");
+		$("#uploaded_view").find("img").remove();
+		btnOuter.removeClass("file_uploading");
+		btnOuter.removeClass("file_uploaded");
+	});
+</script>
+</body>
+
+</html>

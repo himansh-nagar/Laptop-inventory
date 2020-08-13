@@ -1,0 +1,25 @@
+{
+"development": {
+  "username": "root",
+  "password": "Mysql",
+  "database": "ng-inventory",
+  "host": "localhost",
+  "dialect": "mysql",
+  "operatorsAliases": false
+},
+"test": {
+  "username": "root",
+  "password": null,
+  "database": "database_test",
+  "host": "localhost",
+  "dialect": "mysql",
+  "operatorsAliases": false
+},
+  "production": {
+    "username": "b7e2437887xxxa",
+    "password": "0200xxx6",
+    "database": "heroku_7643ec736354xxx",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
+    "dialect": "mysql"
+  }
+}

@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  HEADER SECTION */
+
+
+/*  Laptop decs */
+
+.laptop-details{
+    display: flex;
+    min-height: 60vh;
+    width: 80%;
+    margin: 35px auto 0rem;
+    /* border: 1px solid #d5dbd9; */
+}
+
+.img-div{
+    /* border: 1px solid #d5dbd9; */
+    flex: 1;
+    padding: 2.5rem 0rem;
+    text-align: center;
+    border-radius: 2px;
+    background-color: rgba(245, 245, 245, 0.918);
+}
+
+#lap-img{
+    width: 70%;
+    height: 80%;
+    border-radius: 2px;
+}
+
+.desc-div{
+    flex: 1.4;
+    /* border: 1px solid #d5dbd9; */
+    border-radius: 2px;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+h1::after {
+    content: '';
+    background: #f05f40;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.desc-div ul{
+    list-style: none;
+    font-size: 1.5rem;
+    padding: 48px 53px ;
+}
+
+.desc-div ul li{
+    padding: 4px;
+}
+
+/* Description section */
+
+.desc-section{
+    min-height: 30vh;
+    width: 80%;
+    margin:auto;
+    margin-top: 3rem;
+    /* border: 1px solid #d5dbd9;  */
+}
+
+.para-div{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.ul{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.ul > li{
+    padding: 5px;
+    list-style: none;
+}
+
+hr{
+    color: #f05f40;
+  
+}
+
+/*  laptop owner details */
+
+.owner-details{
+    min-height: 30vh;
+    width: 80%;
+    margin:auto;
+    /* border: 1px solid #d5dbd9; */
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+    
+
+@media only screen and (max-width:1024px){
+    .laptop-details{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:600px){
+    h1{
+        font-size: 30px;
+    }
+    .desc-div > ul > li {
+        font-size: 20px;
+    }
+    .desc-div > ul {
+        text-align: start;
+        padding: 20px;
+    }
+    .ul{
+        font-size: 16px;
+    }
+}

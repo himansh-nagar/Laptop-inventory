@@ -1,0 +1,60 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/static/laptop_detail.css">
+</head>
+<body>
+    <%- include('includes/nav.ejs') %>
+    <section class="laptop-details">
+        
+        <div class="img-div">
+            <img id="lap-img" src="/<%= result['data'].image %>" alt="">
+        </div>
+        <div class="desc-div">
+            <h1>Laptop Detail</h1>
+            <ul>
+                
+                <li>Id: <%= result["data"].id %></li>
+                <li>Owner:  <%= result["data"].owner %></li>
+                <li>color:  <%= result["data"].color%></li>
+                <li>Mac address: <%= result["data"].mac%></li>
+                <li>IP address: <%= result["data"].ip%></li>
+                <li>Active status: <%= result["data"].active%></li>
+                <li>battery: <%= result["data"].battery%></li>
+                <li>Ram:  <%=result["data"].ram%></li>
+                <li>Stroage: <%= result["data"].rom%></li>
+                
+            </ul>
+        </div>
+    </section>
+    <section class="desc-section">
+        <h1>Laptop Maintenance Details</h1>
+        <div class="para-div">
+            <p>
+                <% for(i of result["data1"]){ %>
+                    
+                <ul class="ul" >
+                   <li> Date Modified:- <%= i.date %> </li>
+                   <li>Description:-  <%= i.description %> </li>
+                </ul>
+                <hr>
+                <% } %>
+            </p>
+        </div>
+    </section>
+    <section class="owner-details">
+        <h1>Laptop Owners Details</h1>
+        <div class="para-div">
+            <p>
+                <% for(i of result["data2"]){ %>
+                <ul class="ul">
+                    <li> Assigning date :-  <%= i.date %> </li>
+                    <li>Owner:- <%= i.owner_name %> </li>
+                </ul>
+                <hr>
+                <% } %>
+            </p>
+        </div>
+
+    </section>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>

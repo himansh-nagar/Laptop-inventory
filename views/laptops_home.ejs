@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/static/laptop_home.css">
+</head>
+<body>
+    <%- include('includes/nav.ejs') %>
+    <section class="main-section">
+        <div class="laptops-div">
+            <% for(i of data){ %>
+             
+            <div class="lap-bor-div">
+                <div class="laptop-card"> 
+                    <div class="img-div">
+                        <img id="laptop-img" src="/<%= i.image %>" alt="">
+                    </div>
+                    <div class="desc-div">
+                        <ul>
+                            <li>Id: <%= i.id %></li>
+                            <li>Owner: <%= i.owner %></li>
+                        </ul>
+                        <a href="/laptopDescription/<%= i.id %>">
+                            <button  class="btn draw-border">View Details </button>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </section>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>

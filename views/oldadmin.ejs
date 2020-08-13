@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NG Laptops</title>
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="header-section">
+        <div class="header-div">
+            <div class="logo-div">
+                <img src="/static/logo.png" id="logo" alt="NG-LOGO">
+            </div>
+            <h2>
+                Laptop Inventory
+                <span>Dharamsala Campus</span>
+            </h2>
+        </div>
+    </section>
+    <div class="heading">
+        <h1>Admin Page</h1>
+    </div>
+    <section class="button-section">
+        <div class="button-div">
+            <button id="button">
+                New Laptop Details <i onclick="myFunction()" class="fa fa-angle-down"></i>
+                <div id="from-div1" class="from-div">
+                    <form method="POST" action="/laptop_details">
+                        <div class="group">
+                            <input name="name" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Laptop Model</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="owner" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>owner</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="color" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>color</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="mac" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>mac</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="ip" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ip</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="active" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>active</label>
+                        </div>
+                        <div class="group">
+                            <input name="battery" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>battery</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="description" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>description</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="ram" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ram</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="rom" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>rom</label>
+                        </div>
+
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+
+                </div>
+            </button>
+
+        </div>
+        <div class="button-div">
+            <button>
+                new owner and update owner
+                <i onclick="myFunction1()" class="fa fa-angle-down"></i>
+                <div id="from-div2" class="from-div">
+                    <form method="POST" action="/newOwner">
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="laptop_id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Laptop ID</label>
+                        </div>
+
+                        <div class="group">
+                            <input name="owner_name" laptop_id type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Owner Name</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                new Admin
+                <i onclick="myFunction2()" class="fa fa-angle-down"></i>
+                <div id="from-div3" class="from-div">
+                    <form method="POST" action="/newAdmin">
+                        <div class="group">
+                            <input name="email" type="email" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                delete Admin
+                <i onclick="myFunction3()" class="fa fa-angle-down"></i>
+                <div id="from-div4" class="from-div">
+                    <form method="POST" action="/removeAdmin"> 
+                        <div class="group">
+                            <input name="email" type="email" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                add new maintenance details
+                <i onclick="myFunction4()" class="fa fa-angle-down"></i>
+                <div id="from-div5" class="from-div">
+                    <form method="POST" action="/postMaintenance">
+                        <div class="group">
+                            <input name="laptop_id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Laptop ID</label>
+                        </div>
+                        <div class="group">
+                            <input name="owner" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Owner</label>
+                        </div>
+                        <div class="group">
+                            <input name="status" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Status</label>
+                        </div>
+                        <div class="group">
+                            <input name="description" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Description</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                update active status
+                <i onclick="myFunction5()" class="fa fa-angle-down"></i>
+                <div id="from-div6" class="from-div">
+                    <form method="POST" action="/updateActiveStatus">
+                        <div class="group">
+                            <input name="active" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Active status</label>
+                        </div>
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                update battery status
+                <i onclick="myFunction6()" class="fa fa-angle-down"></i>
+                <div id="from-div7" class="from-div">
+                    <form method="POST" action="/updateBatteryStatus">
+                        <div class="group">
+                            <input name="battery" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>battery status</label>
+                        </div>
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                update description
+                <i onclick="myFunction7()" class="fa fa-angle-down"></i>
+                <div id="from-div8" class="from-div">
+                    <form method="POST" action="/updateDescription">
+                        <div class="group">
+                            <input name="description" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>description</label>
+                        </div>
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                update Mac Address
+                <i onclick="myFunction8()" class="fa fa-angle-down"></i>
+                <div id="from-div9" class="from-div">
+                    <form method="POST" action="/newMac">
+                        <div class="group">
+                            <input name="mac" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Mac Address</label>
+                        </div>
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+        <div class="button-div">
+            <button>
+                update IP Address
+                <i onclick="myFunction9()" class="fa fa-angle-down"></i>
+                <div id="from-div10" class="from-div">
+                    <form action="/newIP" method="POST">
+                        <div class="group">
+                            <input name="ip" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>IP Address</label>
+                        </div>
+                        <div class="group">
+                            <input name="id" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>ID</label>
+                        </div>
+                        <input class="input-submit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </button>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="container text-center">
+            <p>
+                &#169; himansh
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>

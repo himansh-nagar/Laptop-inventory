@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/demo.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="email" onclick="this.classList.add('expand')">
+            <div class="from">
+                <div class="from-contents">
+                    <div class="name">New Laptop Details</div>
+                </div>
+            </div>
+            <div class="to">
+                <div onclick="demoDisplay()" id="to-contents" class="to-contents">
+                    <div class="top">
+                        <div class="name-large">New Laptop Details</div>
+                        <div class="x-touch"
+                            onclick="document.querySelector('.email').classList.remove('expand');event.stopPropagation();">
+                            <div class="x">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="row">
+                            <div class="link"><Input placeholder="ID" type="text"></Input></div>
+                        </div>
+                        <div class="row">
+                            <div class="link"><Input placeholder="Model Name" type="text"></Input></div>
+                        </div>
+                        <div class="row">
+                            <div class="link"><Input placeholder="Model Name" type="text"></Input></div>
+                        </div>
+                        <div class="row">
+                            <div class="link"><Input placeholder="Model Name" type="text"></Input></div>
+                        </div>
+                        <div class="row">
+                            <div class="link"><Input placeholder="Model Name" type="text"></Input></div>
+                        </div>
+                        <div class="row">
+                            <div class="link"><Input placeholder="Model Name" type="text"></Input></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+   </script>
+</body>
+
+</html>
